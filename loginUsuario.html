@@ -1,0 +1,34 @@
+<!-- INGRESAR-->
+<div class="col-md-12 col-sm-12 col-12">
+    <div class="registrar ingresar">
+        <h4 class="titulo">INGRESAR</h4>
+        <form action="{% url 'iniciar_sesion' %}" method="POST" enctype="multipart/form-data" id="form-ingresar">
+   
+            <!-- EMAIL-->
+            <div class="form-group">
+                <label class="form-label">Email:</label>
+                <input class="form-control" type="email" id="emailingresar" placeholder="abde@correo.com" name="usuario"
+                    required>
+            </div>
+            <p class="warnings" id="warningsemailingresar"></p>
+
+            <!-- CONTRASEÑA -->
+            <div class="form-group">
+                <label class="form-label">Contraseña: </label>
+                <input class="form-control" id="claveingresar" type="password" placeholder="Contraseña..."
+                    name="contra">
+            </div>
+        
+        
+            <p class="warnings" id="warningsclaveingresar"></p>
+            <button type="submit" class="botones btn btn-primary ingresarBtn">Ingresar</button>
+            <p class="warningsenviar" id="warningsingresar"></p>
+        </form>
+        <div class="linea-divisora"></div>
+
+        <a href="{% url 'registro' %}" class="registrarseLink">Registrarse</a>
+    </div>
+</div>
+
+</div>
+<!--FIN FORMULARIO-->

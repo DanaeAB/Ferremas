@@ -1,0 +1,100 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-right: 1rem;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.carrito {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #333;
+}
+
+.submenu:hover .carrito {
+    display: block;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.header-txt {
+    flex: 1;
+}
+
+.header-img img {
+    max-width: 100%;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.footer ul li {
+    margin-right: 1rem;
+}
+
+.footer ul li a {
+    color: #fff;
+    text-decoration: none;
+}

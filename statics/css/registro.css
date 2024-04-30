@@ -1,0 +1,114 @@
+.registrar{
+    background-color: #c5c5c5;
+    margin: 50px;
+    padding: 30px;
+    border: 2px solid black;
+}
+
+.registro{
+    width: 60%;
+    margin-left: 20%;
+}
+
+.titulo{
+    margin-bottom: 20px;
+}
+
+.ingresar{
+    width: 40%;
+    margin-left: 30%;
+}
+/* MENSAJES BOOTSTRAP */
+
+.mensajes-bootstrap{
+    padding: 15px;
+}
+
+.mensajes-bootstrap ul li{
+    padding: 5px;
+    border-radius: 10px;
+    
+}
+
+
+/*FIN MENSAJES BOOTSTRAP*/
+
+.check{
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.botones{
+    margin-bottom: 10px;
+    text-align: left;
+}
+.flecha{
+    margin-bottom: 0;
+}
+
+.formulario{
+    box-sizing: border-box;
+}
+select{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize:vertical;
+}
+
+.olvidaste{
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.registrarseLink{
+    background-color: rgb(49, 49, 174);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.registrarseLink:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(88, 88, 175);
+}
+
+.ingresarBtn{
+    width: 30%;
+    font-size: 20px;
+    text-align: center;
+}
+
+.linea-divisora{
+    height: 1px;
+    background-color: black;
+    margin-bottom: 25px;
+}
+@media (max-width:921px){
+
+    
+    .ingresar{
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .titulo{
+        font-size: 22px;
+    }
+    
+    .crearcuenta{
+        margin-left: 5%;
+    }
+
+    .registro{
+        width: 90%;
+        margin-left: 5%;
+    }
+
+}
+
+
+
