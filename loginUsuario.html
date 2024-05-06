@@ -1,34 +1,150 @@
-<!-- INGRESAR-->
-<div class="col-md-12 col-sm-12 col-12">
-    <div class="registrar ingresar">
-        <h4 class="titulo">INGRESAR</h4>
-        <form action="{% url 'iniciar_sesion' %}" method="POST" enctype="multipart/form-data" id="form-ingresar">
-   
-            <!-- EMAIL-->
-            <div class="form-group">
-                <label class="form-label">Email:</label>
-                <input class="form-control" type="email" id="emailingresar" placeholder="abde@correo.com" name="usuario"
-                    required>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ferremas</title>
+    <!-- CSS Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- CSS Propio -->
+    <link type="login/css" rel="stylesheet" href="login.css">
+</head>
+<style>
+    form {
+        border: 3px solid #110b0b;
+    }
+
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #ebedec;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }
+
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #c1bbbb;
+    }
+
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+    }
+
+    img.avatar {
+        width: 20%;
+        border-radius: 30%;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+
+        .cancelbtn {
+            width: 100%;
+        }
+
+        .container {
+            text-decoration: none;
+        }
+    }
+</style>
+
+<link rel="shortcut icon" href="imges/logo.jpeg"> <!--logo en pestaña-->
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Fila -->
+        <div class="row">
+            <!-- Columna -->
+            <div class="col-md-12" style="text-align: center;">
+                <h3>Inicio de sesión</h3>
             </div>
-            <p class="warnings" id="warningsemailingresar"></p>
+        </div>
 
-            <!-- CONTRASEÑA -->
-            <div class="form-group">
-                <label class="form-label">Contraseña: </label>
-                <input class="form-control" id="claveingresar" type="password" placeholder="Contraseña..."
-                    name="contra">
+        <div class="row">
+            <!-- Columna -->
+            <div class="col-md-12 imgcontainer">
+                <img src="statics/images/logoferremas.png" alt="Avatar" class="avatar">
             </div>
-        
-        
-            <p class="warnings" id="warningsclaveingresar"></p>
-            <button type="submit" class="botones btn btn-primary ingresarBtn">Ingresar</button>
-            <p class="warningsenviar" id="warningsingresar"></p>
-        </form>
-        <div class="linea-divisora"></div>
+        </div>
 
-        <a href="{% url 'registro' %}" class="registrarseLink">Registrarse</a>
-    </div>
-</div>
+        <div class="row">
+            <!-- Columna -->
+            <div class="col-md-12" style="text-align: center;">
+                <form action="" method="post" id="contactform">
+                    <label for="email"><b>Email: </b></label>
+                    <input name="email" id="email" type="text" placeholder="Ingrese su email" class="contact-input"
+                        required><span class="error"></span>
+                    <span class="error" id="invalid_email" style="color: #f44336;">El Email es invalido</span>
+                    <br>
+                    <label for="password"><b>Contraseña:</b></label>
+                    <input name="password" id="password" type="password"
+                        placeholder="Ingrese contraseña (entre 5 y 15 caracteres)" class="contact-input" required><span
+                        class="errores"></span>
+                    <span class="errores" id="invalid_password" style="color: #f44336;">La Contraseña es invalida</span>
+                    <br>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Recordar contraseña
+                    </label>
 
-</div>
-<!--FIN FORMULARIO-->
+                    <button type="submit" class="contactform-buttons" id="submit" value="INICIAR SESIÓN">
+                        <h5 style="color: black;">INICIAR SESIÓN</h5>
+                </form>
+
+            </div>
+
+            <div class="col-md-12" style="text-align: center;">
+                <a href="registro.html" class="btn button"
+                    style="color: rgb(255, 255, 255); background-color: rgb(174, 174, 174);">
+                    <h5>Resgistrar</h5>
+                </a>
+            </div>
+            <div class="row">
+                <!-- Columna -->
+                <div class="col-md-12" style="background-color:#f1f1f1">
+                    <a style="margin-right: 10px;" href="home.html" class="btn btn-danger">cancelar</a>
+                  
+                </div>
+            </div>
+
+
+
+        </div>
+</body>
+
+
+</html>
