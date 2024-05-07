@@ -1,52 +1,247 @@
-<!--INICIO FORMULARIO-->
-<div class="row formulario">
-    <!-- CREAR CUENTA-->
-    <div class="col-md-12 col-sm-12 col-12">
-        <div class="registrar registro">
-            <form>
-                <div class="form">
-                    <h4 class="titulo">CREAR NUEVA CUENTA</h4>
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6 col-12" style="margin-bottom: 20px;">
-                            <!-- NOMBRE-->
-                            <div class="form-group">
-                                <label class="form-label">Nombre:</label>
-                                <input class="form-control" type="text" id="firstname" placeholder="Nombre..."
-                                    name="nombre">
-                            </div>
-                            <p class="warnings" id="warningsnombre"></p>
+<!DOCTYPE html>
+<html lang="en">
 
-                            <!--Apellido-->
-                            <div class="form-group">
-                                <label class="form-label">Apellido:</label>
-                                <input class="form-control" type="text" id="lastname" placeholder="Apellido..."
-                                    name="apellido">
-                            </div>
-                            <p id="warningsapellido" class="warnings"></p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferremas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="statics/css/home.css">
+    <link rel="shortcut icon" href="statics/images/logoferremas.png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-                            <!-- CONTRASEÑA -->
-                            <div class="form-group">
-                                <label class="form-label">Contraseña: </label>
-                                <input class="form-control" id="clave" type="password" placeholder="Contraseña..."
-                                    name="contra">
-                            </div>
-                            <p class="warnings" id="warningsclave"></p>
 
-                            <div class="col-md-12 col-sm-12 col-12 check">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="politica" id="check-politica"
-                                        required>
-                                    <label class="form-check-label" for="check-politica">
-                                        He leído y acepto la politica de privacidad.
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="submit" class="botones btn btn-primary">Crear Cuenta</button>
-                        <p class="warningsenviar" id="warnings"></p>
-                    </div>
-            </form>
-            <a href="{% url 'loginUsuario' %}" class="registrarseLink">Ingresar</a>
+    <style>
+    form {
+        border: 3px solid #110b0b;
+    }
+
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #ebedec;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }
+
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #c1bbbb;
+    }
+
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+    }
+
+    img.avatar {
+        width: 20%;
+        border-radius: 30%;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+
+        .cancelbtn {
+            width: 100%;
+        }
+
+        .container {
+            text-decoration: none;
+        }
+    }
+</style>
+
+<link rel="shortcut icon" href="imges/logo.jpeg"> <!--logo en pestaña-->
+
+</head>
+
+<div class="container">
+
+    <!-- Fila -->
+    <hr>
+    <div class="row" style="text-align: center;">
+        <!-- Columna -->
+        <div class="col-md-12">
+            <h1>Crear Cuenta</h1>
         </div>
     </div>
+    <hr>
+
+
+    <form action="/action_page.php" id="formcuenta" method="post">
+
+
+        <div class="row">
+            <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre_i" class="form-control" placeholder="Ej: Lucia">
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" name="apellido" id="apellido_i" class="form-control" placeholder="EJ: Santos">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label for="nombre">Rut:</label>
+                    <input type="text" name="rut" id="rut_i" class="form-control" placeholder="Ej: 211543642">
+                </div>
+            </div>
+
+            <div class=" col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" name="direccion" id="direccion_i" class="form-control"
+                        placeholder="Ej: Los alerces #392">
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+
+            <div class=" col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" id="email_i" class="form-control"
+                        placeholder="Ej: luci.s@gmail.com">
+                </div>
+            </div>
+
+            <div class=" col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label for="celular">Celular:</label>
+                    <input type="number" name="celular" id="celular_i" class="form-control" placeholder="Ej: 965644453">
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+
+            <div class="col-sm-6 col-md-6">
+
+                <div class="form-group">
+                    <label for="Clave">Clave:</label>
+                    <input type="password" name="password" id="password_i" class="form-control"
+                        placeholder="Ej: Luci_1234567" maxlength="15">
+                </div>
+            </div>
+
+
+            <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label for="password">Confirmar Clave:</label>
+                    <input type="password" name="passwordcon" id="passwordcon_i" class="form-control"
+                        placeholder="Ej: Luci_1234567" maxlength="15">
+                </div>
+
+            </div>
+
+            <div class="col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label for="nombre">Pregunta de seguridad :</label>
+                    <input type="text" name="nombre" id="nom_M" class="form-control"
+                        placeholder="Ej:Escriba el segundo nombre de la mamá">
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <button type="reset" id="limpiar_a" class="btn btn-block btn-lg "
+                        style=" background-color:  rgba(156, 206, 225, 0.849); border-color: black;">Limpiar</button>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+
+                    <button type="submit" id="crearcta_a" class="btn btn-block btn-lg "
+                        style=" background-color:  rgba(156, 206, 225, 0.849); border-color: black;">Crear
+                        cuenta</button>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+
+            <div class="col-md-12" style="text-align: center;">
+
+                <!--Justificar y centrar texto-->
+                <p class="warnings" id="crear" style="display: inline-block; text-align: justify;"></p>
+            </div>
+
+
+        </div>
+    </form>
+    <br>
+
+    <!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script-->
 </div>
+
+<!--script src="js/validacionCrearCta.js"></script-->
+
+</body </html>
