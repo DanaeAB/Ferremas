@@ -1,77 +1,45 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f1f1f1;
-    margin: 0;
-    padding: 0;
 }
 
 .container {
-    max-width: 800px;
+    width: 100%;
+    max-width: 100%;
     margin: auto;
-    padding: 20px;
 }
 
-h1 {
-    text-align: center;
-}
 
-.productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.producto {
-    background-color: #fff;
+.card {
+    border: none;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-    padding: 20px;
-    width: 300px;
-    text-align: center;
 }
 
-.producto img {
-    max-width: 100%;
-    height: auto;
+.card-img-top {
+    border-radius: 5px 5px 0 0;
+}
+
+.btn {
     border-radius: 5px;
 }
 
-.producto-info {
-    margin-top: 20px;
-}
-
-.btn-eliminar {
-    display: inline-block;
-    padding: 8px 16px;
+.btn-danger {
     background-color: #dc3545;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+    border-color: #dc3545;
 }
 
-.btn-eliminar:hover {
+.btn-danger:hover {
     background-color: #c82333;
+    border-color: #bd2130;
 }
 
-.acciones {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.btn-vaciar,
-.btn-continuar {
-    display: inline-block;
-    padding: 10px 20px;
+.btn-primary {
     background-color: #007b80;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 0 10px;
+    border-color: #007b80;
 }
 
-.btn-vaciar:hover,
-.btn-continuar:hover {
+.btn-primary:hover {
     background-color: #005d5f;
+    border-color: #005d5f;
 }
