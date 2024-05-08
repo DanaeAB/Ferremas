@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 
 <body>
@@ -35,8 +34,7 @@
                             style="margin-top:10px;">Catálogo</a>
                         <a href="home.html" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
                             style="margin-top:10px;">Inicio</a>
-                        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large"
-                            style="margin-top:10px;" onclick="myFunction()">&#9776;</a>
+                       
 
                     </div>
                 </div>
@@ -44,43 +42,45 @@
 
         </header>
         <!--FIN menú -->
+        <!-- pequeña descripción de ferremas y fotos de lo que está disponible -->
+        <div class="w3-row-padding" id="Trainers">
 
-        <div class="w3-third w3-margin-bottom">
-            <div class="w3-card-4">
-                <img src="statics/images/makita destornillador.jpg" alt="Photo by Sam manns" style="width:100%">
-                <div class="w3-container">
-                    <h3>Herramientas eléctricas.</h3>
-                    <p class="w3-opacity">Encuentra variedad en herramientas eléctricas.</p>
-                    <p><button class="w3-button w3-round w3-container w3-teal w3-block"><a
-                                href="#Contact">Ir</a></button></p>
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card-4">
+                    <img src="statics/images/makita destornillador.jpg" alt="Photo by Sam manns" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Herramientas eléctricas.</h3>
+                        <p class="w3-opacity">Encuentra variedad en herramientas eléctricas.</p>
+                        <p><button class="w3-button w3-round w3-container w3-teal w3-block"><a
+                                    href="#Contact">Ir</a></button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card-4">
+                    <img src="statics/images/Madera.jpg" alt="Photo by Manuel Meza" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Construcción</h3>
+                        <p class="w3-opacity">Encuentra, maderas, vulcanitas, etc.</p>
+                        <p><button class="w3-button w3-round w3-container w3-teal w3-block"><a
+                                    href="#Contact">Ir</a></button></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card-4">
+                    <img src="statics/images/pinturas.jpg" alt="Photo by Wieger Stienstra" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Pinturas</h3>
+                        <p class="w3-opacity">Encuentra variedad en pinturas.</p>
+                        <p><button class="w3-button w3-round w3-container w3-teal w3-block"><a
+                                    href="#Contact">Ir</a></button></p>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="w3-third w3-margin-bottom">
-            <div class="w3-card-4">
-                <img src="statics/images/Madera.jpg" alt="Photo by Manuel Meza" style="width:100%">
-                <div class="w3-container">
-                    <h3>Construcción</h3>
-                    <p class="w3-opacity">Encuentra, maderas, vulcanitas, etc.</p>
-                    <p><button class="w3-button w3-round w3-container w3-teal w3-block"><a
-                                href="#Contact">Ir</a></button></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="w3-third w3-margin-bottom">
-            <div class="w3-card-4">
-                <img src="statics/images/pinturas.jpg" alt="Photo by Wieger Stienstra" style="width:100%">
-                <div class="w3-container">
-                    <h3>Pinturas</h3>
-                    <p class="w3-opacity">Encuentra variedad en pinturas.</p>
-                    <p><button class="w3-button w3-round w3-container w3-teal w3-block"><a
-                                href="#Contact">Ir</a></button></p>
-                </div>
-            </div>
-        </div>
-
 
         <!-- menu con logos de REDES SOCIALES -->
         <footer class="w3-container  w3-teal w3-center w3-margin-top">
@@ -89,17 +89,10 @@
             <i class="fa fa-instagram w3-hover-opacity"></i>
             <i class="fa fa-twitter w3-hover-opacity"></i>
         </footer>
-    </div>
-    <script>
-    function myFunction() {
-        var x = document.getElementById("demo");
-        if (x.className.indexOf("w3-show") == -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
-    }</script>
-</body>
 
+    </div>
+
+
+</body>
 
 </html>
