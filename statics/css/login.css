@@ -68,18 +68,7 @@ img {
     border-radius: 8px;
 }
 
-.boton_anu {
-    display: inline-block;
-    padding: 10px;
-    background-color: #289d2a;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #333;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-}
+
 
 
 
