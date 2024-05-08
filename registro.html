@@ -90,95 +90,125 @@
 
 </head>
 
-<div class="container">
+<body>
+    <!--menú-->
+    <div class="container">
+        <header class="header">
+            <div class="row">
+                <div class="w3-bar w3-teal w3-text-black">
+                    <h2 class="w3-left w3-tag w3-container w3-teal">FERREMAS</h2>
 
-    <!-- Fila -->
-    <hr>
-    <div class="row" style="text-align: center;">
-        <!-- Columna -->
-        <div class="col-md-12">
-            <h1>Crear Cuenta</h1>
-        </div>
-    </div>
-    <hr>
+                    <div class="col-md-12">
+                        <a href="#Activities" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
+                            style="margin-top:10px;"> <img src="statics/images/carrito.png" width="30" height="30"></a>
 
+                        <a href="loginUsuario.html"
+                            class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
+                            style="margin-top:10px;">Inicio sesión</a>
+                        <a href="catalogo.html" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
+                            style="margin-top:10px;">Catálogo</a>
+                        <a href="home.html" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
+                            style="margin-top:10px;">Inicio</a>
+                        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large"
+                            style="margin-top:10px;" onclick="myFunction()">&#9776;</a>
 
-    <form action="/action_page.php" id="formcuenta" method="post">
-
-
-        <div class="row">
-            <div class="col-sm-6 col-md-6">
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre_i" class="form-control" placeholder="Ej: Lucia">
+                    </div>
                 </div>
             </div>
 
-            <div class="col-sm-6 col-md-6">
-                <div class="form-group">
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" name="apellido" id="apellido_i" class="form-control" placeholder="EJ: Santos">
+        </header>
+        <!--FIN menú -->
+
+        <div class="container">
+
+            <!-- Fila -->
+            <hr>
+            <div class="row" style="text-align: center;">
+                <!-- Columna -->
+                <div class="col-md-12">
+                    <h1>Crear Cuenta</h1>
                 </div>
             </div>
-        </div>
+            <hr>
 
-        <div class="row">
 
-            <div class=" col-sm-6 col-md-6">
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="text" name="email" id="email_i" class="form-control"
-                        placeholder="Ej: luci.s@gmail.com">
+            <form action="/action_page.php" id="formcuenta" method="post">
+
+
+                <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" name="nombre" id="nombre_i" class="form-control" placeholder="Ej: Lucia">
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" name="apellido" id="apellido_i" class="form-control"
+                                placeholder="EJ: Santos">
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-sm-6 col-md-6">
+                <div class="row">
 
-                <div class="form-group">
-                    <label for="Clave">Clave:</label>
-                    <input type="password" name="password" id="password_i" class="form-control"
-                        placeholder="Ej: Luci_1234567" maxlength="15">
-                </div>
-            </div>
+                    <div class=" col-sm-6 col-md-6">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="text" name="email" id="email_i" class="form-control"
+                                placeholder="Ej: luci.s@gmail.com">
+                        </div>
+                    </div>
 
-        </div>
+                    <div class="col-sm-6 col-md-6">
 
-
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <button type="reset" id="limpiar_a" class="btn btn-block btn-lg "
-                        style=" background-color:  rgba(156, 206, 225, 0.849); border-color: black;">Limpiar</button>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="form-group">
-
-                    <button type="submit" id="crearcta_a" class="btn btn-block btn-lg "
-                        style=" background-color:  rgba(156, 206, 225, 0.849); border-color: black;">Crear
-                        cuenta</button>
-
+                        <div class="form-group">
+                            <label for="Clave">Clave:</label>
+                            <input type="password" name="password" id="password_i" class="form-control"
+                                placeholder="Ej: Luci_1234567" maxlength="15">
+                        </div>
+                    </div>
 
                 </div>
-            </div>
-        </div>
-
-        <div class="row">
 
 
-            <div class="col-md-12" style="text-align: center;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <button type="reset" id="limpiar_a" class="btn btn-block btn-lg "
+                                style=" background-color:  rgba(156, 206, 225, 0.849); border-color: black;">Limpiar</button>
+                        </div>
+                    </div>
 
-                <!--Justificar y centrar texto-->
-                <p class="warnings" id="crear" style="display: inline-block; text-align: justify;"></p>
-            </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+
+                            <button type="submit" id="crearcta_a" class="btn btn-block btn-lg "
+                                style=" background-color:  rgba(156, 206, 225, 0.849); border-color: black;">Crear
+                                cuenta</button>
 
 
-        </div>
-    </form>
-    <br>
+                        </div>
+                    </div>
+                </div>
 
-    <!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                <div class="row">
+
+
+                    <div class="col-md-12" style="text-align: center;">
+
+                        <!--Justificar y centrar texto-->
+                        <p class="warnings" id="crear" style="display: inline-block; text-align: justify;"></p>
+                    </div>
+
+
+                </div>
+            </form>
+            <br>
+
+            <!--script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
@@ -187,8 +217,10 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
             integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
             crossorigin="anonymous"></script-->
-</div>
+        </div>
 
-<!--script src="js/validacionCrearCta.js"></script-->
+    </div>
 
-</body </html>
+    <!--script src="js/validacionCrearCta.js"></script-->
+
+</body>
