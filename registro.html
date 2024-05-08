@@ -16,77 +16,77 @@
 
 
     <style>
-    form {
-        border: 3px solid #110b0b;
-    }
-
-    input[type=text],
-    input[type=password] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-    }
-
-    button {
-        background-color: #ebedec;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-    }
-
-    button:hover {
-        opacity: 0.8;
-    }
-
-    .cancelbtn {
-        width: auto;
-        padding: 10px 18px;
-        background-color: #c1bbbb;
-    }
-
-    .imgcontainer {
-        text-align: center;
-        margin: 24px 0 12px 0;
-    }
-
-    img.avatar {
-        width: 20%;
-        border-radius: 30%;
-    }
-
-    .container {
-        padding: 16px;
-    }
-
-    span.psw {
-        float: right;
-        padding-top: 16px;
-    }
-
-    /* Change styles for span and cancel button on extra small screens */
-    @media screen and (max-width: 300px) {
-        span.psw {
-            display: block;
-            float: none;
+        form {
+            border: 3px solid #110b0b;
         }
 
-        .cancelbtn {
+        input[type=text],
+        input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #ebedec;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
             width: 100%;
         }
 
-        .container {
-            text-decoration: none;
+        button:hover {
+            opacity: 0.8;
         }
-    }
-</style>
 
-<link rel="shortcut icon" href="imges/logo.jpeg"> <!--logo en pestaña-->
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #c1bbbb;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img.avatar {
+            width: 20%;
+            border-radius: 30%;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+
+            .cancelbtn {
+                width: 100%;
+            }
+
+            .container {
+                text-decoration: none;
+            }
+        }
+    </style>
+
+    <link rel="shortcut icon" href="imges/logo.jpeg"> <!--logo en pestaña-->
 
 </head>
 
@@ -122,26 +122,6 @@
             </div>
         </div>
 
-
-        <div class="row">
-            <div class="col-sm-6 col-md-6">
-                <div class="form-group">
-                    <label for="nombre">Rut:</label>
-                    <input type="text" name="rut" id="rut_i" class="form-control" placeholder="Ej: 211543642">
-                </div>
-            </div>
-
-            <div class=" col-sm-6 col-md-6">
-                <div class="form-group">
-                    <label for="direccion">Dirección:</label>
-                    <input type="text" name="direccion" id="direccion_i" class="form-control"
-                        placeholder="Ej: Los alerces #392">
-                </div>
-            </div>
-        </div>
-
-
-
         <div class="row">
 
             <div class=" col-sm-6 col-md-6">
@@ -152,19 +132,6 @@
                 </div>
             </div>
 
-            <div class=" col-sm-6 col-md-6">
-                <div class="form-group">
-                    <label for="celular">Celular:</label>
-                    <input type="number" name="celular" id="celular_i" class="form-control" placeholder="Ej: 965644453">
-                </div>
-            </div>
-
-        </div>
-
-
-        <div class="row">
-
-
             <div class="col-sm-6 col-md-6">
 
                 <div class="form-group">
@@ -173,26 +140,6 @@
                         placeholder="Ej: Luci_1234567" maxlength="15">
                 </div>
             </div>
-
-
-            <div class="col-sm-6 col-md-6">
-                <div class="form-group">
-                    <label for="password">Confirmar Clave:</label>
-                    <input type="password" name="passwordcon" id="passwordcon_i" class="form-control"
-                        placeholder="Ej: Luci_1234567" maxlength="15">
-                </div>
-
-            </div>
-
-            <div class="col-sm-6 col-md-6">
-                <div class="form-group">
-                    <label for="nombre">Pregunta de seguridad :</label>
-                    <input type="text" name="nombre" id="nom_M" class="form-control"
-                        placeholder="Ej:Escriba el segundo nombre de la mamá">
-                </div>
-            </div>
-
-
 
         </div>
 
