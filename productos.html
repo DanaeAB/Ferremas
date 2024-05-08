@@ -9,13 +9,11 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap-flex.min.css">
-    <script src="https://use.fontawesome.com/5765211a64.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="statics/css/catalogo.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans Pro">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="statics/css/productos.css">
     <style>
         html {
             scroll-behavior: smooth;
@@ -33,14 +31,38 @@
         body {
             font-family: "Source Sans Pro"
         }
+
+        /* Nuevos estilos para las tarjetas */
+        .card {
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .card-title {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 14px;
+        }
     </style>
 </head>
 
-<!-- Menu -->
-
 <body class="w3-light-white w3-margin">
 
-    <!--menú-->
+    <!-- Menu -->
     <div class="container">
         <header class="header">
             <div class="row">
@@ -68,52 +90,49 @@
         </header>
         <!--FIN menú -->
 
-
-
-
         <!-- Listado -->
-
         <div class="col-xs-12 col-md-9">
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-lg-4">
                     <div class="card">
-                        <img class="card-img-top img-fluid" src="statics/images/makita destornillador.jpg" width="150"
-                            height="150" alt="Card image cap">
+                        <img class="card-img-top img-fluid" src="statics/images/makita destornillador.jpg"
+                            alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">Destornillador</h4>
-                            <p class="card-text">Descripción: Destornillador eléctrico Makita<br>
-                                Valor: 79.990</p>
+                            <p class="card-text">Descripción: Destornillador eléctrico Makita<br>Valor: 79.990</p>
+                            <a href="#" class="btn-comprar">Comprar</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-xs-12 col-sm-6 col-lg-4">
                     <div class="card">
-                        <img class="card-img-top img-fluid" src="statics/images/Madera.jpg" width="150" height="150"
-                            alt="Card image cap">
+                        <img class="card-img-top img-fluid" src="statics/images/Madera.jpg" alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">Madera</h4>
-                            <p class="card-text">Descripción: Madera 200 cm * 190 cm<br>
-                                Valor: 19.990</p>
+                            <p class="card-text">Descripción: Madera 200 cm * 190 cm<br>Valor: 19.990</p>
+                            <a href="#" class="btn-comprar">Comprar</a>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-xs-12 col-sm-6 col-lg-4">
                     <div class="card">
-                        <img class="card-img-top img-fluid" src="statics/images/pintura.png" width="150" height="150"
-                            alt="Card image cap">
+                        <img class="card-img-top img-fluid" src="statics/images/pintura.png" alt="Card image cap">
                         <div class="card-block">
                             <h4 class="card-title">Pinturas</h4>
-                            <p class="card-text">Descripción: Pintura al agua semibrillo<br>
-                                Color: Blanco <br>
-                                Valor: 19.990</p>
+                            <p class="card-text">Descripción: Pintura al agua semibrillo<br>Color: Blanco <br>Valor:
+                                19.990
+                            </p>
+                            <a href="#" class="btn-comprar">Comprar</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-         <!-- menu con logos de REDES SOCIALES -->
-         <footer class="w3-container  w3-teal w3-center w3-margin-top">
+
+        <!-- menu con logos de REDES SOCIALES -->
+        <footer class="w3-container  w3-teal w3-center w3-margin-top">
             <p>Encuentranos como @Ferremas.cl en todas las redes sociales</p>
             <i class="fa fa-facebook-official w3-hover-opacity"></i>
             <i class="fa fa-instagram w3-hover-opacity"></i>
