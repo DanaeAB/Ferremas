@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
             passwordError.textContent = "Por favor, ingresa tu contraseña.";
             passwordError.style.display = "block";
         } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(password)) {
-            passwordError.textContent = "La contraseña debe tener al menos 6 caracteres y contener números y letras.";
+            passwordError.textContent = "La contraseña debe tener 6 caracteres y contener números y letras.";
             passwordError.style.display = "block";
         } else {
             redirigirSiEsValido();
