@@ -1,159 +1,97 @@
-$(document).ready(function () {
-    $("#form-registrar").submit(function (e) {
+document.addEventListener("DOMContentLoaded", function () {
+    var nombreInput = document.getElementById("nombre_i");
+    var apellidoInput = document.getElementById("apellido_i");
+    var emailInput = document.getElementById("email_i");
+    var passwordInput = document.getElementById("password_i");
 
-        var nombre = $("#firstname").val();
-        var correo = $("#email").val();
-        var clave = $("#clave").val();
-        var apellido = $("#lastname").val();
+    nombreInput.addEventListener("input", validarNombre);
+    apellidoInput.addEventListener("input", validarApellido);
+    emailInput.addEventListener("input", validarEmail);
+    passwordInput.addEventListener("input", validarPassword);
 
-        let msjNombre = "";
-        let msjApellido = "";
-        let msjCorreo = "";
-        let msjClave = "";
+    function validarNombre() {
+        var nombre = nombreInput.value.trim();
+        var nombreError = document.getElementById("nombre_error");
 
-        let enviar = false;
+        nombreError.textContent = "";
+        nombreError.style.display = "none";
 
-        /* NOMBRE*/
-        if (nombre.trim().length < 2 || nombre.trim().length > 10) {
-            msjNombre += "<li>El nombre debe ser entre 2 y 10 caracteres</li>";
-            enviar = true;
+        if (nombre === "") {
+            nombreError.textContent = "Por favor, ingresa tu nombre.";
+            nombreError.style.display = "block";
+        } else if (/^\d+$/.test(nombre)) {
+            nombreError.textContent = "El nombre no puede contener números.";
+            nombreError.style.display = "block";
+        } else {
+            redirigirSiEsValido();
         }
+    }
 
-        var letra = nombre.charAt(0);
-        if (!esMayuscula(letra)) {
-            msjNombre += "<li>La primera letra debe ser mayúscula</li>";
-            enviar = true;
+    function validarApellido() {
+        var apellido = apellidoInput.value.trim();
+        var apellidoError = document.getElementById("apellido_error");
+
+        apellidoError.textContent = "";
+        apellidoError.style.display = "none";
+
+        if (apellido === "") {
+            apellidoError.textContent = "Por favor, ingresa tu apellido.";
+            apellidoError.style.display = "block";
+        } else if (/^\d+$/.test(apellido)) {
+            apellidoError.textContent = "El apellido no puede contener números.";
+            apellidoError.style.display = "block";
+        } else {
+            redirigirSiEsValido();
         }
+    }
 
-        if (!soloLetras(nombre)) {
-            msjNombre += "<li>Solo deben ser letras sin espacios en blanco</li>";
-            enviar = true;
+    function validarEmail() {
+        var email = emailInput.value.trim();
+        var emailError = document.getElementById("email_error");
+
+        emailError.textContent = "";
+        emailError.style.display = "none";
+
+        if (email === "") {
+            emailError.textContent = "Por favor, ingresa tu correo electrónico.";
+            emailError.style.display = "block";
+        } else if (!email.endsWith("@gmail.com") && !email.endsWith("@hotmail.com")) {
+            emailError.textContent = "El email debe ser de Gmail o Hotmail.";
+            emailError.style.display = "block";
+        } else {
+            redirigirSiEsValido();
         }
+    }
 
-        /* FIN NOMBRE*/
+    function validarPassword() {
+        var password = passwordInput.value.trim();
+        var passwordError = document.getElementById("password_error");
 
-        /* APELLIDO */
+        passwordError.textContent = "";
+        passwordError.style.display = "none";
 
-        if (apellido.trim().length < 2 || apellido.trim().length > 30) {
-            msjApellido += "<li>El apellido debe ser entre 2 y 30 caracteres</li>";
-            enviar = true;
+        if (password === "") {
+            passwordError.textContent = "Por favor, ingresa tu contraseña.";
+            passwordError.style.display = "block";
+        } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(password)) {
+            passwordError.textContent = "La contraseña debe tener 6 caracteres y contener números y letras.";
+            passwordError.style.display = "block";
+        } else {
+            redirigirSiEsValido();
         }
+    }
 
-        var letra = apellido.charAt(0);
-        if (!esMayuscula(letra)) {
-            msjApellido += "<li>La primera letra debe ser mayúscula</li>";
-            enviar = true;
+    function redirigirSiEsValido() {
+        var nombre = nombreInput.value.trim();
+        var apellido = apellidoInput.value.trim();
+        var email = emailInput.value.trim();
+        var password = passwordInput.value.trim();
+
+        if (nombre !== "" && !(/^\d+$/.test(nombre)) &&
+            apellido !== "" && !(/^\d+$/.test(apellido)) &&
+            email !== "" && (email.endsWith("@gmail.com") || email.endsWith("@hotmail.com")) &&
+            password !== "" && /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(password)) {
+            window.location.href = "catalogo.html";
         }
-
-        if (!soloLetrasyespacio(apellido)) {
-            msjApellido += "<li>Solo deben ser letras</li>";
-            enviar = true;
-        }
-
-
-        /* FIN APELLIDO*/
-
-        /* EMAIL */
-
-        if (!validarEmail(correo)) {
-            msjCorreo += "<li>El correo es incorrecto</li>";
-            enviar = true;
-        }
-
-        if (correo.trim().length > 50) {
-            msjCorreo += "<li>El correo debe ser menor a 50 caracteres</li>";
-            enviar = true;
-        }
-
-        /* FIN EMAIL*/
-
-
-        /* CONTRASEÑA */
-
-        if (clave.trim().length < 8) {
-            msjClave += "<li>La clave debe ser mayor a 8 caracteres</li>";
-            enviar = true;
-        }
-
-        if (clave.trim().length > 50) {
-            msjClave += "<li>La clave debe ser menor a 50 caracteres</li>";
-            enviar = true;
-        }
-
-        if (!validarAlMenosUnNumero(clave)) {
-            msjClave += "<li>Minimo 1 número</li>";
-            enviar = true;
-        }
-
-        if (!validarAlMenosUnaMayuscula(clave)) {
-            msjClave += "<li>Minimo 1 Mayúscula</li>";
-            enviar = true;
-        }
-
-        if (!validarAlMenosUnCaracterEspecial(clave)) {
-            msjClave += "<li>Minimo 1 Caracter Especial</li>";
-            enviar = true;
-        }
-
-        if (!validarAlMenosUnaMinuscula(clave)) {
-            msjClave += "<li>Minimo 1 Minúscula</li>";
-            enviar = true;
-        }
-        /* FIN CONTRASEÑA */
-
-        /* CONTRASEÑA */
-
-        if (clave.trim().length < 8) {
-            msjClave += "<li>La clave debe ser mayor a 8 caracteres</li>";
-            enviar = true;
-        }
-
-        if (clave.trim().length > 50) {
-            msjClave += "<li>La clave debe ser menor a 50 caracteres</li>";
-            enviar = true;
-        }
-
-        if (!validarAlMenosUnNumero(clave)) {
-            msjClave += "<li>Minimo 1 número</li>";
-            enviar = true;
-        }
-
-        if (!validarAlMenosUnaMayuscula(clave)) {
-            msjClave += "<li>Minimo 1 Mayúscula</li>";
-            enviar = true;
-        }
-
-        if (!validarAlMenosUnCaracterEspecial(clave)) {
-            msjClave += "<li>Minimo 1 Caracter Especial</li>";
-            enviar = true;
-        }
-
-        if (!validarAlMenosUnaMinuscula(clave)) {
-            msjClave += "<li>Minimo 1 Minúscula</li>";
-            enviar = true;
-        }
-        /* FIN CONTRASEÑA */
-        /* ADVERTENCIAS (WARNINGS)*/
-        if (enviar) {
-            $("#warningsnombre").html(msjNombre);
-            $("#warningsapellido").html(msjApellido);
-            $("#warningsemail").html(msjCorreo);
-            $("#warningsclave").html(msjClave);
-
-            $("#warnings").html("");
-
-            e.preventDefault();
-        }
-        else {
-            $("#warningsnombre").html("");
-            $("#warningsapellido").html("");
-            $("#warningsemail").html("");
-            $("#warningsclave").html("");
-        }
-
-        /* FIN ADVERTENCIAS (WARNINGS)*/
-
-
-    });
-
+    }
 });

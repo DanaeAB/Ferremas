@@ -17,7 +17,10 @@
 
     <style>
         form {
-            border: 3px solid #110b0b;
+            border: 1px solid #110b0b ;
+            max-width: 80%;
+            margin-left: 10%;
+            
         }
 
         input[type=text],
@@ -67,6 +70,10 @@
         span.psw {
             float: right;
             padding-top: 16px;
+        }
+        .error{
+            color: cadetblue;
+            text-align: center;
         }
 
         /* Change styles for span and cancel button on extra small screens */
@@ -132,78 +139,60 @@
         <hr>
 
 
-        <form action="/action_page.php" id="formcuenta" method="post">
-
-
+        <form id="formcuenta">
             <div class="row">
                 <div class="col-sm-6 col-md-6">
                     <div class="form-group">
                         <label for="nombre">Nombre:</label>
                         <input type="text" name="nombre" id="nombre_i" class="form-control" placeholder="Ej: Lucia">
+                        <span id="nombre_error" class="error" style="display: none;"></span> <!-- Mensaje de error para el nombre -->
                     </div>
                 </div>
-
+        
                 <div class="col-sm-6 col-md-6">
                     <div class="form-group">
                         <label for="apellido">Apellido:</label>
-                        <input type="text" name="apellido" id="apellido_i" class="form-control"
-                            placeholder="EJ: Santos">
+                        <input type="text" name="apellido" id="apellido_i" class="form-control" placeholder="EJ: Santos">
+                        <span id="apellido_error" class="error" style="display: none;"></span> <!-- Mensaje de error para el apellido -->
                     </div>
                 </div>
             </div>
-
+        
             <div class="row">
-
-                <div class=" col-sm-6 col-md-6">
+                <div class="col-sm-6 col-md-6">
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="text" name="email" id="email_i" class="form-control"
-                            placeholder="Ej: luci.s@gmail.com">
+                        <input type="text" name="email" id="email_i" class="form-control" placeholder="Ej: luci.s@gmail.com">
+                        <span id="email_error" class="error" style="display: none;"></span> <!-- Mensaje de error para el email -->
                     </div>
                 </div>
-
+        
                 <div class="col-sm-6 col-md-6">
-
                     <div class="form-group">
                         <label for="Clave">Clave:</label>
-                        <input type="password" name="password" id="password_i" class="form-control"
-                            placeholder="Ej: Luci_1234567" maxlength="15">
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <button type="reset" id="limpiar_a" class="btn btn-block btn-lg "
-                            style=" background-color:  rgba(156, 206, 225, 0.849); border-color: black;">Limpiar</button>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="form-group">
-
-                        <button type="submit" id="crearcta_a" class="btn btn-block btn-lg "
-                            style=" background-color:  rgba(156, 206, 225, 0.849); border-color: black;">Crear
-                            cuenta</button>
-
-
+                        <input type="password" name="password" id="password_i" class="form-control" placeholder="Ej: Luc123" maxlength="15">
+                        <span id="password_error" class="error" style="display: none;"></span> <!-- Mensaje de error para la clave -->
                     </div>
                 </div>
             </div>
-
+        
             <div class="row">
-
-
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <button type="reset" id="limpiar_a" class="btn btn-block btn-lg " style="background-color: rgb(5, 148, 141); border-color: white;">Limpiar</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <button type="submit" id="crearcta_a" class="btn btn-block btn-lg " style="background-color: rgb(5, 148, 141); border-color: white;">Crear cuenta</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="row">
                 <div class="col-md-12" style="text-align: center;">
-
-                    <!--Justificar y centrar texto-->
                     <p class="warnings" id="crear" style="display: inline-block; text-align: justify;"></p>
                 </div>
-
-
             </div>
         </form>
         <br>
@@ -217,6 +206,6 @@
 
     </div>
 
-    <!--script src="js/validacionCrearCta.js"></script-->
+    <script src="statics/js/register.js"></script
 
 </body>
