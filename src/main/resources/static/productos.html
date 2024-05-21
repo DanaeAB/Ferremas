@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap-flex.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans Pro">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="/css/productos.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Roboto"
+        }
+
+        body {
+            font-family: "Source Sans Pro"
+        }
+
+        /* Nuevos estilos para las tarjetas */
+        .card {
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .card-title {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body class="w3-light-white w3-margin">
+
+    <!-- Menu -->
+    <div class="container">
+        <header class="header">
+            <div class="row">
+                <div class="w3-bar w3-teal w3-text-black">
+                    <h2 class="w3-left w3-tag w3-container w3-teal">FERREMAS</h2>
+
+                    <div class="col-md-12" id="navLinks">
+                        <a href="#Activities" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
+                            style="margin-top:10px;"> <img src="/images/carrito.png" width="30" height="30"></a>
+
+                        <a id="user" href="loginUsuario.html"
+                            class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
+                            style="margin-top:10px;">Inicio sesión</a>
+                        <a href="catalogo.html" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
+                            style="margin-top:10px;">Catálogo</a>
+                        <a href="/" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
+                            style="margin-top:10px;">Inicio</a>
+                        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large"
+                            style="margin-top:10px;" onclick="myFunction()">&#9776;</a>
+
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        <!--FIN menú -->
+
+        <!-- Listado -->
+        <div class="col-xs-12 col-md-9">
+            <div class="row" id="productos">
+            </div>
+        </div>
+        <a href="/carrito.html" class="w3-button w3-round w3-container w3-teal w3-padding-large w3-large w3-hover-opacity-off" style="color:white; background-color: rgb(5, 148, 141);">Ir al carrito</a>
+
+        <!-- menu con logos de REDES SOCIALES -->
+        <footer class="w3-container  w3-teal w3-center w3-margin-top">
+            <p>Encuentranos como @Ferremas.cl en todas las redes sociales</p>
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+        </footer>
+    </div>
+    <script src="/js/lib/axios.min.js"></script>
+    <script>
+        const productos = [];
+
+        function agregarAlCarrito(evt, id) {
+            const carrito = localStorage.getItem("carrito") ? JSON.parse(localStorage.getItem("carrito")) : [];
+            const producto = productos.find(producto => producto.id === id);
+            producto.cantidad = 1;
+
+            // Busca si el producto existe en el carrito, y si existe le aumenta la cantidad a pedir
+            // De lo contrario, solo lo agrega al carrito
+            const productoI = carrito.findIndex(producto => producto.id === id);
+            if (productoI !== -1) {
+                carrito[productoI].cantidad++;
+                evt.textContent = `Agregar al carrito (${carrito[productoI].cantidad})`;
+            }
+            else {
+                carrito.push(producto);
+                evt.textContent = `Agregar al carrito (${producto.cantidad})`;
+            }
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+        }
+    </script>
+    <script src="/js/utils.js"></script>
+    <script type="module">
+        import ProductosService from "/js/services/ProductosService.js";
+        import AuthService from "/js/services/AuthService.js";
+
+        const usuarioNav = document.querySelector("#user");
+        AuthService.getUserData().then(user => {
+            localStorage.setItem("usuario", JSON.stringify(user));
+            usuarioNav.textContent = "Pedidos";
+            usuarioNav.href = "/pedidos.html";
+        });
+
+        const categoria = new URLSearchParams(location.search).get("categoria") || null;
+
+        ProductosService.obtenerProductos({ categoria }).then(res => {
+            productos.push(...res.data);
+            let productosHTML = productos.map(producto => `
+                <div class="card col-xs-12 col-sm-6 col-lg-4">
+                    <img class="card-img-top img-fluid" src="${producto.imagen}" alt="${producto.nombre} - Imagen">
+                    <div class="card-block">
+                        <h4 class="card-title">${producto.nombre}</h4>
+                        <p class="card-text">
+                            Descripción: ${producto.descripcion}<br>
+                            Color: ${producto.color}<br>
+                            Precio: ${formatearPrecio(producto.precio)}<br>
+                            Stock: ${producto.stock}
+                        </p>
+                        <div>
+                            <a href="#" class="btn-comprar" onclick="agregarAlCarrito(this, ${producto.id});">Agregar al carrito</a>
+                        </div>
+                    </div>
+                </div>
+            `).join("");
+            if (!productos.length) productosHTML = `<h2>No hay productos disponibles para mostrar.</h2>`;
+            document.querySelector("#productos").innerHTML = productosHTML;
+        });
+    </script>
+</body>
+
+</html>

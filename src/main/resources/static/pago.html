@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferremas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="shortcut icon" href="/images/logoferremas.png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source Sans Pro">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .row {
+            display: -ms-flexbox;
+            /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap;
+            /* IE10 */
+            flex-wrap: wrap;
+            margin: 0 -16px;
+        }
+
+        .col-25 {
+            -ms-flex: 25%;
+            /* IE10 */
+            flex: 25%;
+        }
+
+        .col-50 {
+            -ms-flex: 50%;
+            /* IE10 */
+            flex: 50%;
+        }
+
+        .col-75 {
+            -ms-flex: 75%;
+            /* IE10 */
+            flex: 75%;
+        }
+
+        .col-25,
+        .col-50,
+        .col-75 {
+            padding: 0 16px;
+        }
+
+        .container {
+            background-color: #f2f2f2;
+            padding: 5px 20px 15px 20px;
+            border: 1px solid lightgrey;
+            border-radius: 3px;
+        }
+
+        input[type=text] {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        label {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .icon-container {
+            margin-bottom: 20px;
+            padding: 7px 0;
+            font-size: 24px;
+        }
+
+        .btn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            width: 100%;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        span.price {
+            float: right;
+            color: grey;
+        }
+
+       /* Diseño responsivo: cuando la pantalla tiene menos de 800 px de ancho,
+        haga que las dos columnas se apilen una encima de la otra en lugar de una al lado 
+       de la otra (y cambie la dirección; haga que la columna "carrito" vaya encima) */
+        @media (max-width: 800px) {
+            .row {
+                flex-direction: column-reverse;
+            }
+
+            .col-25 {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+
+    <link rel="shortcut icon" href="imges/logo.jpeg"> <!--logo en pestaña-->
+
+</head>
+
+<body>
+    <!--menú-->
+    <div class="container">
+        <header class="header">
+            <div class="row">
+                <div class="w3-bar w3-teal w3-text-black">
+                    <h2 class="w3-left w3-tag w3-container w3-teal">FERREMAS</h2>
+
+                    <div class="col-md-12">
+                        <a href="#Activities" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
+                            style="margin-top:10px;"> <img src="/images/carrito.png" width="30" height="30"></a>
+
+                        <a href="loginUsuario.html"
+                            class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
+                            style="margin-top:10px;">Inicio sesión</a>
+                        <a href="catalogo.html" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
+                            style="margin-top:10px;">Catálogo</a>
+                        <a href="/" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
+                            style="margin-top:10px;">Inicio</a>
+                        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-medium w3-hide-large"
+                            style="margin-top:10px;" onclick="myFunction()">&#9776;</a>
+
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        <!--FIN menú -->
+
+        <!--formulario de pago-->
+        <div class="row">
+            <div class="col-75">
+                <div class="container">
+                    <form action="/action_page.php">
+
+                        <div class="row">
+                            <div class="col-50">
+                                <h3>Dirección de envio</h3>
+                                <label for="nombre"><i class="fa fa-user"></i> Nombre completo</label>
+                                <input type="text" id="fname" name="firstname" placeholder="Pedro Ramirez">
+                                <label for="correo"><i class="fa fa-envelope"></i> Correo</label>
+                                <input type="text" id="email" name="email" placeholder="pedro_ramirez3@gmail.com">
+                                <label for="direccion"><i class="fa fa-address-card-o"></i>Dirección</label>
+                                <input type="text" id="adr" name="address" placeholder="camino loyola 5425">
+                                <label for="ciudad"><i class="fa fa-institution"></i>Ciudad</label>
+                                <input type="text" id="city" name="city" placeholder="Santiago">
+                            </div>
+
+                            <div class="col-50">
+                                <h3>Pago</h3>
+                                <label for="t_a">Tarjetas aceptadas</label>
+                                <div class="icon-container">
+                                    <i class="fa fa-cc-visa" style="color:navy;"></i>
+                                    <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                                    <i class="fa fa-cc-discover" style="color:orange;"></i>
+                                </div>
+                                <label for="nom_t">Nombre del titular</label>
+                                <input type="text" placeholder="Pedro Ramirez">
+                                <label for="num_t">Numero de tarjeta</label>
+                                <input type="text" placeholder="1111-2222-3333-4444">
+                                <label for="exp_t">Mes expiración</label>
+                                <input type="text" placeholder="Septiembre">
+
+                                <div class="row">
+                                    <div class="col-50">
+                                        <label for="ano_exp">Año de expiración</label>
+                                        <input type="text" placeholder="2026">
+                                    </div>
+                                    <div class="col-50">
+                                        <label for="cvv">CV</label>
+                                        <input type="text"  placeholder="352">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                        <a class="btn">Pagar</a>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-25">
+                <div class="container">
+                    <h4>Carro
+                        <span class="price" style="color:black">
+                            <i class="fa fa-shopping-cart"></i>
+                            <b>4</b>
+                        </span>
+                    </h4>
+                    <p><a >Producto 1</a> <span class="price">$15.000</span></p>
+                    <p><a >Producto 2</a> <span class="price">$5.000</span></p>
+                    <p><a >Producto 3</a> <span class="price">$8.000</span></p>
+                    <p><a >Producto 4</a> <span class="price">$2.000</span></p>
+                    <hr>
+                    <p>Total <span class="price" style="color:black"><b>$30.000</b></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</body>
+
+</html>

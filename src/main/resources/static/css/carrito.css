@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+}
+
+
+.card {
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    border-radius: 5px 5px 0 0;
+}
+
+.btn {
+    border-radius: 5px;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.btn-primary {
+    background-color: #007b80;
+    border-color: #007b80;
+}
+
+.btn-primary:hover {
+    background-color: #005d5f;
+    border-color: #005d5f;
+}
